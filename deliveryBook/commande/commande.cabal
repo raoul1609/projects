@@ -25,7 +25,9 @@ source-repository head
 
 library
   exposed-modules:
+      App.Funzione
       Domain.Commandes
+      Infra.BdCommandes
       Lib
   other-modules:
       Paths_commande
