@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.35.1.
+-- This file has been generated from package.yaml by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
 
@@ -38,6 +38,7 @@ library
       aeson
     , base >=4.7 && <5
     , bytestring
+    , hspec
     , http-client
     , http-conduit
     , mysql
@@ -65,6 +66,7 @@ executable commande-exe
     , base >=4.7 && <5
     , bytestring
     , commande
+    , hspec
     , http-client
     , http-conduit
     , mysql
@@ -93,6 +95,7 @@ test-suite commande-test
     , base >=4.7 && <5
     , bytestring
     , commande
+    , hspec
     , http-client
     , http-conduit
     , mysql

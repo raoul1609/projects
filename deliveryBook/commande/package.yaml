@@ -36,6 +36,7 @@ dependencies:
 - parsec
 - network
 - http-conduit
+- hspec
 
 ghc-options:
 - -Wall
