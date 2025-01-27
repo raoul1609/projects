@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titre}}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card{
+            margin-left: 400px;
+            padding: 20px;
+            width: 500px;
+            height: 300px;
+        }
+
+        h1, h2, h3, .card-title {
+            color: #ff880077;
+        }
+
+        .btn-primary {
+            background-color: #ff880077;
+            border-color: #ff880077;
+        }
+
+        .btn-primary:hover {
+            background-color: #e77e6e;
+            border-color: #e77e6e;
+        }
+
+        .btn-outline-primary {
+            border-color: #ff880077;
+            color: #ff880077;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #ff880077;
+            color: white;
+        }
+
+        footer {
+            background-color: #ff880077;
+        }
+
+        footer p {
+            color: white;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Header Section -->
+    <header>
+        <nav class="container d-flex justify-content-between align-items-center py-3">
+            <div>
+                <img src="{% static 'iut_evry.png' %}" alt="Logo de Evry" class="img-fluid" style="max-height: 200px;">
+            </div>
+
+            <div>
+                {% include "./a_propos_de_nous.html" %}
+            </div>
+
+            <div>
+                <img src="{% static 'logo_inubil.jpeg' %}" alt="Logo de Inubil" class="img-fluid" style="max-height: 200px;">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container my-5 text-center">
+        <h1 class="mb-4">INSTITUT UNIVERSITAIRE BILINGUE DU LITTORAL / IUT D'ÉVRY</h1>
+        <h2 class="text-muted mb-5">PARCOURS : LICENCE MÉTIER DE L'INFORMATIQUE APPLICATION WEB <br>SITE : SABLE</h2>
+
+        <!-- Card with Content Links -->
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-body">
+                <h4 class="card-title mb-4">PLATEFORME DE GESTION DE L'EMPLOI DU TEMPS</h4>
+                <p>
+                    <a href="{% url 'saveProgram' %}" class="btn btn-primary w-100 mb-3">Enregistrer un progamme journalier</a>
+                </p>
+                <p>
+                    <a href="{% url 'showProgram' %}" class="btn btn-outline-primary w-100">Consulter les programmes disponibles</a>
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="py-3 mt-auto">
+        <p class="text-center mb-0">© TP Groupe 3, LP MIAW EVRY 2024/2025 : Gestion de l'emploi du Temps</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

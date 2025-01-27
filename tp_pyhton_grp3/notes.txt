@@ -1,0 +1,48 @@
+-- plateforme simple qui permet d'afficher l'emploi du temps des cours en miaw
+
+fonctionnalites a implementer : 
+    - creer un emploi du temps 
+    - acceder aux informations sur les cours programmes pour un jour specifique
+    - modifier le programme d'un jour specifique
+    - afficher un emploi de temps sur une semaine
+
+
+process : 
+    - creer le projet django
+    - ceer un environnement virtuel ou installe les dependences pour qu'il n y ait pas conflits
+    - installer django dans l'environnement virtuel
+
+creation des modeles : 
+    - on ne doit pas creer aucune table dans la bd, la migration cree les tables dans la bd
+
+
+je n'arrive pas a afficher la date que je recupere dans la base de donnes
+
+les connexions sont etablies, les donnees entrees dans le formulaire se sauvegardent bien, liens effectifs, 
+    je dois maintenant recuperer les donnees du client, les valider, avant sauvegarde dans la bd
+
+TAF :
+comment faire un pop-up avec django ?
+comment inserer une image dans un template django?
+ecrire les filtres : 
+    - tous les cours d'un prof particulier 
+    - tous les cours sur un mois ?
+    - les cours de la semaine ?
+    - un programme journalier, en entrant une date precise
+    - telecharger l'emploi du temps au format pdf ?
+    - ajouter un bouton qui permet d'enregistrer un enseignant lorsqu'il n'exite pas dans la liste
+    - dans la vue, faire request dans la table enseignant pour recuperer un enseignant et ses informations --> ok
+
+requette utile en cas de panne :
+    insert into emploi_du_temps_miawteachers (nom, telephone) values ('M NKOLLO', 673314822), ('Dr KUTCHE', 674993876), ('M DJOFANG', 698437637), ('M NDOK PIA', 69974863);
+
+TAF : penser a une logique du css.
+    fonctionnalites operationnelles : 
+        - enregistrer un programme journalier --> ok
+        - afficher les emplois definis  --> ok
+        - implementer la recherche les cours d'une date precise **
+        - implementer la fonctionnalites ajout d'un enseignant --> ok
+        - mettre le boutton Accueil et A propos de nous 
+            Acceuil(renvoit a la page d'acceuil), A propos ()  **   
+
+la methode is_valid() fait la verification en fonction des criteres definis lors de la creation du modele auquel il est associe 

@@ -1,0 +1,74 @@
+body {
+    background-color: #ffffff;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background: rgba(0, 0, 0, 0.7); /* Noir avec opacité */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(8px); /* Effet de flou */
+}
+
+h1 {
+    color: #ff6600; /* Orange vif */
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2, h3 {
+    color: #007bff; /* Bleu */
+    text-align: center;
+    margin: 10px 0;
+}
+
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table th {
+    background-color: rgba(255, 102, 0, 0.8); /* Orange avec opacité */
+    color: #ffffff;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+table td {
+    background-color: rgba(0, 123, 255, 0.1); /* Bleu clair avec opacité */
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.05); /* Noir très clair pour les lignes paires */
+}
+
+a {
+    color: #007bff; /* Bleu */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px;
+}
+
+a:hover {
+    color: #ff6600; /* Orange au survol */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+img {
+    display: block;
+    max-width: 150px;
+    margin: 10px auto;
+}
