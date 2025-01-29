@@ -1,0 +1,14 @@
+<h1>
+    Page de donnexion
+</h1>
+{% for message in messages%}
+<p>
+    {{message}}
+</p>
+{%endfor%}
+
+<form mehtod="post">
+    {% csrf_token %}
+    {{ formulaire.as_p}}
+    <input type="submit" value="Se connecter">
+</form>

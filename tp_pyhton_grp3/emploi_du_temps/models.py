@@ -17,7 +17,7 @@ class Programme (models.Model):
     
 class MiawTeachers (models.Model):
     nom = models.CharField (primary_key=True, null=False, default="M Raoul", verbose_name= "nom de l'enseignant", max_length=255)
-    telephone = models.IntegerField (null=False)
+    telephone = models.CharField (null=False, max_length=255)
 
     def __str__(self):
         return self.nom

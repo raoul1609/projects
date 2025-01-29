@@ -44,5 +44,19 @@ TAF : penser a une logique du css.
         - implementer la fonctionnalites ajout d'un enseignant --> ok
         - mettre le boutton Accueil et A propos de nous 
             Acceuil(renvoit a la page d'acceuil), A propos ()  **   
+        - inclure un librairie qui gere les telephones pour valider les telephones
+        - faire les expressions regulieres pour ananlyser le nom d'un cours 
 
-la methode is_valid() fait la verification en fonction des criteres definis lors de la creation du modele auquel il est associe 
+la methode is_valid() fait la verification en fonction des regles definis lors de la 
+    creation du modele auquel il est associe 
+
+toutes les methodes de validation personnalisees commence par clean_
+elles sont definis dans le form.py
+
+c'est quoi un middleware dans le contexte de django ?
+
+
+# Authentifications et Permissions#
+partir de l'existant et personnaliser le systeme d'Authentification
+django a beaucoup d'outils pour gerer les Authentifications
+
