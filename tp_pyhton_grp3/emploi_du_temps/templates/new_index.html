@@ -55,7 +55,7 @@
 </head>
 
 
-{% if user.is_authencated%}
+{%comment%} {% if user.is_authencated%}
     <p>
         Connecte sous {{user.username}} | <a href = "{% url 'accounts:logout'%}"> Deconnecter
     </p>
@@ -66,6 +66,7 @@
     </p>
 
 {% else %}
+{%endcomment%}
 
 <body class="bg-light d-flex flex-column min-vh-100">
 

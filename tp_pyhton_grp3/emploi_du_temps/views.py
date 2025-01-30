@@ -6,7 +6,22 @@ from datetime import date, datetime
 from .forms import ProgammeForm, TeacherForm
 from django.contrib import messages
 
-# Create your views here.
+from rest_framework import generics
+from .serializers import TeacherSerializer
+
+                ### CLASSES POUR MON API ####
+
+class MiawTeachersList(generics.ListCreateAPIView):
+    queryset = MiawTeachers.objects.all()
+    serializer_class = TeacherSerializer
+
+class MiawTeachersDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = MiawTeachers.objects.all()
+    serializer_class = TeacherSerializer
+
+
+
+                #### DEFINITIONS DES DIFFERENTES VUES DJANGO####
 
 def index (request):
     context ={'titre': "Page d'acceuil"}
@@ -135,3 +150,6 @@ def getProgram (request):
                "message": "Plateforme qui affiche l'emploi du temps de licence professionnelle delocalisee, filiere MIAW"}
     
     return render (request, 'new_showProgram.html', context)
+
+
+
