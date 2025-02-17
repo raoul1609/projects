@@ -66,8 +66,18 @@ NB : j'ai cree un branche Dev, sur laquelle je vaus travailler d'habitude
     - la requette post de l'authenfication, arrive en get (pourtant avec jason)
 
 # TAF : creer un API avec Django
-    - installer djangorestframework : pip install djangorestframework
+    - installer djangorestframework : pip install djangorestframework  --> djangorestframework installed with success
 
-    - j'ai cree et test un get et un post sur mon api avec postman
+    - j'ai cree et test un get et un post sur mon api avec postman  --> test API is correct, work effectively
     
 # TAF : configurer on serveur Apache local pour servir mon application django
+
+
+NB : Django rest framework, fonctionne avec les modeles django, les serialiteurs qui font les transformation ( model -> json/xml et xml/json -> model)
+    et des vues pour gerer les requettes HTTP en fin il faut lier les vues aux differentes urls
+
+
+TAF : - mettre sur pieds un systeme d'authentification basique fournit par Django 
+      - etendre le model User, pour permettre la connexion via le matricule de l'etudiant 
+      - essayer d'integer un fournisseur de services d'authenfication tiers comme google, en utilisant django-allauth ou python-social-auth
+      - 
