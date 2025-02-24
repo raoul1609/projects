@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <title> My blog </title>
+        <h1>Delete post</h1>
+        <p>
+            voulez-vous supprimer le post dont l'id est {{post.id}}
+            cette action est irreversible: 
+        </p>
+        <p>
+            <strong>
+                {{ message }}
+            </strong>
+        </p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit"> Oui, supprimer </button>
+            <a href="{% url 'posts' %}"> Annuler </a>
+        </form>
+
+    </body>
+</html>

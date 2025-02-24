@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title> My blog </title>
+    </head>
+    <body>
+        <h1> Details sur un post </h1>
+        <h2>{{thePost.title}}</h2>
+        <p>{{thePost.content}}</p>
+        <p><em>Cree le : {{thePost.created_at}}</em></p>
+        <a href="{% url 'posts' %}"> Retour a la liste des posts</a>
+        <a href="{% url 'delete' thePost.id %}"> Supprimer</a>
+    </body>
+</html>

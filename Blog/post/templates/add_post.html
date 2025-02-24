@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title> My blog </title>
+    </head>
+    <body>
+        <p>
+            <strong>
+                {{message}}
+            </strong>     
+        </p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Envoyer">
+        </form>
+    </body>
+</html>

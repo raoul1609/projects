@@ -1,0 +1,8 @@
+- pour un modele, il est possible d'avoir plusieurs formulaires. 
+    ex : un formulaire pour la creation, un autre pour la mise a jour du modele, un autre pour la suppression ...
+
+- pour utiliser l'ecriture form = SomeForm (request.POST, instance= some_object)
+ cette ecriture permet de mettre a jour facilement un modele, en liant les donnees venant du formulaire avec l'object recupere au prealable.
+ pour utiliser cette ecriture, il faut utiliser le meme formulaire pour eviter les erreurs, surement au niveau des champs
+
+NB : la migration n'a pas encore ete effectuee, django 5 demande une version 10.5 ou plus de mariadb
