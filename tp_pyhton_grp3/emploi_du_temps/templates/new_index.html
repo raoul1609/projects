@@ -54,18 +54,24 @@
     </style>
 </head>
 
+<div>
 
-{% if user.is_authencated%}
-    <p>
-        Connecte sous {{user.username}} | <a href = "{% url 'accounts:logout'%}"> Deconnecter
-    </p>
-{% elif  %}
-    <p>
-        <a href = "{% url 'login' %}"> Connexion
-        <a href = "{% url 'register' %}"> Inscription
-    </p>
-
-{% else %}
+    {% if user.is_authenticated %}
+        <div>
+            <p>
+                Connecte sous:  {{user.username}} | <a href = "{% url 'accounts:logout'%}"> Deconnecter</a>
+            </p>
+        </div>
+    
+    {% else %}
+        <div>
+            
+            <p><a href = "{% url 'accounts:login' %}"> Connexion</a></p>
+            <p><a href = "{% url 'accounts:register' %}"> Inscription</a></p>
+        </div> 
+    {% endif %}
+    
+</div>
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
@@ -75,10 +81,11 @@
             <div>
                 <img src="{% static 'iut_evry.png' %}" alt="Logo de Evry" class="img-fluid" style="max-height: 200px;">
             </div>
-
+            {%comment%}
             <div>
                 {% include "./a_propos_de_nous.html" %}
             </div>
+            {%endcomment%}
 
             <div>
                 <img src="{% static 'logo_inubil.jpeg' %}" alt="Logo de Inubil" class="img-fluid" style="max-height: 200px;">
