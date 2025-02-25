@@ -1,0 +1,4 @@
+le travail sur le blog, est en reference aux questions presentes dans enonce_blog.txt
+
+- pour la connexion et la deconnexion, j'ai utilise les vues basees sur les classes. ces classes etant deja definies dans django 
+- la creation du compte est une initiative personnelle, cela n'est pas dans enonce_blog.txt

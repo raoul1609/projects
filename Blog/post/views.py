@@ -1,12 +1,19 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import redirect, render
-from .models import Post, Category
+from .models import Post, Comment
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
-from .forms import CreatePostForm
+from .forms import CreatePostForm, SignupForm
 from datetime import datetime
+
+# import utiles pour envoyer les emails 
+from django.conf import settings
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -41,13 +48,17 @@ def postDetails(request, post_id):
     '''
     try:
         post = get_object_or_404 (Post, id= post_id)
-        return render (request, 'post_details.html', {'thePost': post} )
+        comments = Comment.object.filter(post = post).orderBy('-created_at') # -created_at indique que le tri se fera par ordre decroissant, du plus recent au plus ancien
+        return render (request, 'post_details.html', {'thePost': post, 'comments': comments})
+    
     except Http404:
         messages.info(request, 'il n y a pas de poste avec pour id {1}'.format(post_id))
         return HttpResponse ('Il n y a pas de post avec cet identifiant')
     
+#le decorateur login_required permet de proteger une vue, en exigeant une connexion avant l'appel de cette fonction
+# pour proteger les vues basees sur les classes, ca se passe autrement, on utilise autre technique.
 
-
+@login_required
 def addPost(request):
     '''
         view to add a post
@@ -71,6 +82,7 @@ def addPost(request):
         return render(request, 'add_post.html', {})
 
 
+@login_required
 def update_post(request, post_id):
     '''
         this view is used for update some post
@@ -90,7 +102,8 @@ def update_post(request, post_id):
     except Http404:
             return render(request, 'update_post.html', {'message': 'ce post n existe pas encore'})
     
-    
+
+@login_required    
 def delete_post(request, post_id):
     '''
         this view is for delete post
@@ -105,6 +118,28 @@ def delete_post(request, post_id):
             return render(request, 'delete_post.html', {'message': 'le post que vous voulez supprimer n existe pas.'})
     else:
         return render(request, 'delete_post.html', {'post': postToDelete})
+    
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid() :
+            user = form.save()
+            login(request, user) #connecte user apres inscription
+
+            # Envoyer un email de confirmation
+            send_mail(
+                'Neudjieu te souhaite la bienvenue',
+                'Merci pour la creation de ton compte!',
+                settings.DEFAULT_FROM_EMAIL,
+                [user.email],
+                fail_silently=False,
+            )
+            return redirect('post_list')
+        
+    else:
+        form = SignupForm()
+        return render (request, 'signup/signup.html', {'form': form})
 
     
        

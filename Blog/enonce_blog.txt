@@ -1,0 +1,177 @@
+Exercices sur les Modèles et l'Administration
+    Créer un Modèle de Blog
+
+    Créez un modèle Post avec les champs suivants : title (CharField), content (TextField), created_at (DateTimeField, auto_now_add=True), et updated_at (DateTimeField, auto_now=True).
+
+    Enregistrez ce modèle dans l'interface d'administration.
+
+    Ajouter des Catégories
+
+    Créez un modèle Category avec un champ name (CharField).
+
+    Ajoutez une relation ForeignKey entre Post et Category pour associer chaque post à une catégorie.
+
+    Créer un Superutilisateur
+
+    Créez un superutilisateur pour accéder à l'interface d'administration.
+
+    Ajoutez quelques posts et catégories via l'interface d'administration.
+
+Exercices sur les Vues et les Templates
+    Afficher la Liste des Posts
+
+    Créez une vue pour afficher la liste des posts.
+
+    Créez un template post_list.html pour afficher les posts sous forme de liste.
+
+    Afficher les Détails d'un Post
+
+    Créez une vue pour afficher les détails d'un post spécifique.
+
+    Créez un template post_detail.html pour afficher le titre, le contenu et la date de création du post.
+
+    Ajouter la Pagination
+
+    Ajoutez la pagination à la liste des posts pour afficher 5 posts par page.
+
+Exercices sur les Formulaires
+    Créer un Formulaire pour Ajouter des Posts
+
+    Créez un formulaire pour ajouter des posts.
+
+    Ajoutez une vue et un template pour gérer ce formulaire.
+
+    Modifier un Post Existant
+
+    Créez un formulaire pour modifier un post existant.
+
+    Ajoutez une vue et un template pour gérer ce formulaire.
+
+    Supprimer un Post
+
+    Créez une vue pour supprimer un post.
+
+    Ajoutez un bouton de suppression dans le template post_detail.html.
+
+Exercices sur les Relations entre Modèles
+    - Ajouter des Commentaires
+
+    Créez un modèle Comment avec les champs suivants : post (ForeignKey vers Post), author (CharField), content (TextField), et created_at (DateTimeField, auto_now_add=True).
+
+    Affichez les commentaires associés à un post dans le template post_detail.html.
+
+    - Ajouter des Tags
+
+    Créez un modèle Tag avec un champ name (CharField).
+
+    Ajoutez une relation ManyToManyField entre Post et Tag pour associer plusieurs tags à un post.
+
+Exercices sur l'Authentification et les Permissions
+    - Ajouter l'Authentification
+
+    Ajoutez l'authentification à votre application.
+
+    Protégez la création, la modification et la suppression de posts pour les utilisateurs connectés.
+
+    - Créer un Profil Utilisateur
+
+    Créez un modèle Profile avec une relation OneToOneField vers le modèle User de Django.
+
+    Ajoutez des champs comme bio (TextField) et profile_picture (ImageField).
+
+    - Ajouter des Permissions
+
+    Restreignez la modification et la suppression des posts à leurs auteurs uniquement.
+
+Exercices sur les API REST avec Django REST Framework
+    Créer une API pour les Posts
+
+    Installez Django REST Framework.
+
+    Créez une API pour lister, créer, modifier et supprimer des posts.
+
+    Ajouter l'Authentification à l'API
+
+    Ajoutez l'authentification à votre API pour protéger les endpoints.
+
+    Créer une API pour les Commentaires
+
+    Créez une API pour lister, créer, modifier et supprimer des commentaires.
+
+Exercices sur les Tests
+    Tester les Modèles
+
+    Écrivez des tests pour vérifier la création et la modification des posts et des commentaires.
+
+    Tester les Vues
+
+    Écrivez des tests pour vérifier que les vues retournent les bonnes réponses et les bons templates.
+
+    Tester les Formulaires
+
+    Écrivez des tests pour vérifier que les formulaires fonctionnent correctement.
+
+Exercices sur le Déploiement
+    Déployer sur Heroku
+
+    Déployez votre application Django sur Heroku.
+
+    Configurez une base de données PostgreSQL pour la production.
+
+    Configurer les Variables d'Environnement
+
+    Utilisez django-environ ou python-decouple pour gérer les variables d'environnement comme SECRET_KEY et DEBUG.
+
+    Configurer un Domaine Personnalisé
+
+    Configurez un domaine personnalisé pour votre application déployée.
+
+Exercices Avancés
+    Ajouter la Recherche
+
+    Ajoutez une fonctionnalité de recherche pour les posts en utilisant Q objects.
+
+    Ajouter la Gestion des Fichiers Statiques et des Médias
+
+    Configurez Django pour servir les fichiers statiques et les fichiers médias en production.
+
+    Créer un Système de Notifications
+
+    Créez un système de notifications pour informer les utilisateurs des nouveaux commentaires sur leurs posts.
+
+    Ajouter un Système de Cache
+
+    Configurez le cache pour améliorer les performances de votre application.
+
+    Créer un Dashboard Administrateur
+
+    Créez un tableau de bord personnalisé pour les administrateurs en utilisant Django Admin.
+
+    Intégrer un Frontend Moderne
+
+    Intégrez un frontend moderne (React, Vue.js) avec Django en utilisant Django REST Framework comme backend.
+
+    Créer un Système d'Abonnement
+
+    Créez un système d'abonnement pour permettre aux utilisateurs de s'abonner à des catégories ou des tags.
+
+Exercices sur les Bonnes Pratiques
+    Refactoriser le Code
+
+    Refactorisez votre code pour respecter les bonnes pratiques de Django (par exemple, utiliser les class-based views).
+
+    Ajouter des Logs
+
+    Configurez les logs pour enregistrer les erreurs et les activités importantes.
+
+    Optimiser les Requêtes
+
+    Utilisez select_related et prefetch_related pour optimiser les requêtes de base de données.
+
+    Sécuriser l'Application
+
+    Ajoutez des mesures de sécurité comme CSRF, CORS, et HTTPS.
+
+    Créer une Documentation
+
+    Créez une documentation pour votre application en utilisant Sphinx ou MkDocs.
