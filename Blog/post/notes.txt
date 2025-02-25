@@ -2,3 +2,8 @@ le travail sur le blog, est en reference aux questions presentes dans enonce_blo
 
 - pour la connexion et la deconnexion, j'ai utilise les vues basees sur les classes. ces classes etant deja definies dans django 
 - la creation du compte est une initiative personnelle, cela n'est pas dans enonce_blog.txt
+
+La classe Meta dans un modèle Django est une classe interne utilisée pour définir des métadonnées supplémentaires sur le modèle. 
+    Ces métadonnées permettent de configurer des aspects spécifiques du modèle, tels que le nom de la table en base de données, 
+    l'ordre par défaut des objets, les permissions, ou encore les contraintes d'unicité. La classe Meta est optionnelle, 
+    mais elle est très utile pour personnaliser le comportement de votre modèle.
