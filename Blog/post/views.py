@@ -139,7 +139,9 @@ def signup(request):
         
     else:
         form = SignupForm()
-        return render (request, 'signup/signup.html', {'form': form})
+        #return render (request, 'signup/signup.html', {'form': form}) # donne une erreur lors de l'execution
+    
+    return render (request, 'signup/signup.html', {'form': form})
 
     
        

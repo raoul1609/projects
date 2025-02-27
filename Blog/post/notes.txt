@@ -7,3 +7,6 @@ La classe Meta dans un modèle Django est une classe interne utilisée pour déf
     Ces métadonnées permettent de configurer des aspects spécifiques du modèle, tels que le nom de la table en base de données, 
     l'ordre par défaut des objets, les permissions, ou encore les contraintes d'unicité. La classe Meta est optionnelle, 
     mais elle est très utile pour personnaliser le comportement de votre modèle.
+
+    username : neudjieu
+    password: Ubuntu1234

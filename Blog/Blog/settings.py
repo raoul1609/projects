@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "raoul_db",
+        "NAME": "blog_db",
         "USER": "neudjieu",
         "PASSWORD": "Raoul1609",
-        "HOST": "127.0.0.1",
+        "HOST": "0.0.0.0",
         "PORT": "3306",
     }
 }
@@ -126,3 +126,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+'''
+    par defaut la classe LoginView redirige vers le template accounts/profile, pour changer cela il faut ajouter des attributs 
+        a la methode .as_view(), et ajouter le champ LOGIN_REDIRECT_URL dans settings, ce champ contient contient la vue a retourner 
+        a la place de profile.
+'''
+
+LOGIN_REDIRECT_URL = 'posts'  # Redirige vers la vue nommée 'getAllPosts'

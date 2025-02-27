@@ -8,13 +8,15 @@
         <title> My blog </title>
 
         <nav>
-            {% if user.is_authentificated %}
-                <p> Bienvenu {{user.username }} !</p>
-            {%else%}
-                <a href= "{% url 'login' %}"> Connexion </a>
-                <a href= "{% url 'signup' %}"> Creer un compte </a>
-            {%endif%}
+            {% if user.is_authenticated %}
+                <p> Bienvenu <strong>{{user.username }} !</strong></p>
+                <p><a href = "{% url 'logout' %}"> Deconnexion </a></p>
+            {% else %}
+                <p><a href= "{% url 'login' %}"> Connexion </a> | </p>
+                <p><a href= "{% url 'signup' %}"> Creer un compte </a></p>
+            {% endif %}
         </nav>
+
     </head>
     <body>
         <h1>List of post </h1>

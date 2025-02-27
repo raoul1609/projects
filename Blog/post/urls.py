@@ -10,7 +10,7 @@ urlpatterns = [
     path('<int:post_id>/delete/', delete_post, name='delete'), 
 
     ## AUTHENTIFICATION'S LINKS ###
-    path('login/', auth_views.LoginView.as_view(template = 'authentification/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template = 'authentification/logout.html'), name='logout'),
+    path('login/', auth_views.LoginView.as_view(template_name = 'authentification/login.html', redirect_authenticated_user=True), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name = 'authentification/logout.html'), name='logout'),
     path('register/', signup, name='signup'),
 ]
