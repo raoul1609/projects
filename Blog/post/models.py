@@ -24,7 +24,7 @@ class Tag(models.Model):
 
 
 class Post (models.Model):
-    title = models.CharField (null= False, help_text= 'Renseigne un titre', max_length=255)
+    title = models.CharField (null= False, max_length=255)
     content = models.TextField (null= False, default = '', max_length=2000 )
     created_at = models.DateTimeField (auto_now_add=True, help_text= 'entre une date de creation', null=False)
     updated_at = models.DateTimeField (auto_now_add=True, help_text= 'entre une date de mise a jour', null=False)

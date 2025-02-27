@@ -68,18 +68,21 @@ def addPost(request):
         formulaire = CreatePostForm(request.POST)
 
         if formulaire.is_valid():
+
             validedName = formulaire.cleaned_data['name']
             validedContent = formulaire.cleaned_data['content']
             datePost = datetime.now()
             Post.objects.create(name= validedName, content=validedContent, created_at=datePost)
-            context = {'message': 'Ok, le post a ete cree avec success', 'form': formulaire}
-            return render (request, 'add_post.html', context )
+            return render (request, 'add_post.html', {'message': 'Ok, le post a ete cree avec success', 'form': formulaire})
+        
         else:
             formulaire = CreatePostForm()
             #messages.info(request, 'formulaire non valide')
-            context = {'message': 'formulaire non valide, veuillez recommencer.'}
+            return render (request, 'add_post.html', {'message':'formulaire non valide, veuillez recommencer.', 'form': formulaire})
     else:
-        return render(request, 'add_post.html', {})
+        formulaire = CreatePostForm()
+        
+    return render(request, 'add_post.html', {'message': '', 'form': formulaire})
 
 
 @login_required
