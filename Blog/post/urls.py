@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import getAllPosts, postDetails, addPost, update_post, delete_post, signup
+from .views import PostList, getAllPosts, postDetails, addPost, update_post, delete_post, signup
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -13,4 +13,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name = 'authentification/login.html', redirect_authenticated_user=True), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name = 'authentification/logout.html'), name='logout'),
     path('register/', signup, name='signup'),
+
+    # API ENDPOINTS
+    path('api/all/', PostList.as_view())
 ]

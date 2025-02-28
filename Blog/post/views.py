@@ -11,12 +11,31 @@ from django.contrib.auth import login
 from .forms import CreatePostForm, SignupForm
 from datetime import datetime
 
-# import utiles pour envoyer les emails 
+### IMPORT UTILES POUR ENVOYER LES MAILS
 from django.conf import settings
 from django.core.mail import send_mail
 
-# Create your views here.
+### IMPORT UTILES POUR IMPLEMENTER LES API
+from rest_framework import generics
+from .serializers import PostSerializer
 
+
+
+
+### CLASSES POUR MON API ####
+
+# endpoint pour avoir la liste des posts 
+class PostList(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+
+
+
+
+
+### IMPLEMENTATION DES VUES AVEC LES FONCTIONS : on peut aussi le faire avec les classes.
 
 def getAllPosts (request):
     '''
@@ -48,7 +67,7 @@ def postDetails(request, post_id):
     '''
     try:
         post = get_object_or_404 (Post, id= post_id)
-        comments = Comment.object.filter(post = post).orderBy('-created_at') # -created_at indique que le tri se fera par ordre decroissant, du plus recent au plus ancien
+        comments = Comment.objects.filter(post = post).order_by('-created_at') # -created_at indique que le tri se fera par ordre decroissant, du plus recent au plus ancien
         return render (request, 'post_details.html', {'thePost': post, 'comments': comments})
     
     except Http404:
@@ -69,10 +88,10 @@ def addPost(request):
 
         if formulaire.is_valid():
 
-            validedName = formulaire.cleaned_data['name']
+            validedTitle = formulaire.cleaned_data['title']
             validedContent = formulaire.cleaned_data['content']
             datePost = datetime.now()
-            Post.objects.create(name= validedName, content=validedContent, created_at=datePost)
+            Post.objects.create(title= validedTitle, content=validedContent, created_at=datePost)
             return render (request, 'add_post.html', {'message': 'Ok, le post a ete cree avec success', 'form': formulaire})
         
         else:
@@ -118,9 +137,10 @@ def delete_post(request, post_id):
             return redirect('posts')
         
         except Http404:
-            return render(request, 'delete_post.html', {'message': 'le post que vous voulez supprimer n existe pas.'})
+            #return render(request, 'delete_post.html', {'message': 'le post que vous voulez supprimer n existe pas.'})
+            return redirect('posts')
     else:
-        return render(request, 'delete_post.html', {'post': postToDelete})
+        return render(request, 'delete_post.html', {})
     
 
 def signup(request):

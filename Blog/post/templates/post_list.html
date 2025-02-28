@@ -23,7 +23,7 @@
         <ul>
             {% for post in posts %}
             <li> 
-                <a href="{% url 'postDetails' post.id %}"></a>{{post.title}} - {{post.created_at}}
+                <a href="{% url 'postDetails' post.id %}"> {{post.title}} - {{post.created_at}} </a>
             </li>
             {% endfor %}
         </ul>
