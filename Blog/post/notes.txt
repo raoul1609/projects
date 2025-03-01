@@ -1,0 +1,69 @@
+le travail sur le blog, est en reference aux questions presentes dans enonce_blog.txt
+
+- pour la connexion et la deconnexion, j'ai utilise les vues basees sur les classes. ces classes etant deja definies dans django 
+- la creation du compte est une initiative personnelle, cela n'est pas dans enonce_blog.txt
+
+La classe Meta dans un modèle Django est une classe interne utilisée pour définir des métadonnées supplémentaires sur le modèle. 
+    Ces métadonnées permettent de configurer des aspects spécifiques du modèle, tels que le nom de la table en base de données, 
+    l'ordre par défaut des objets, les permissions, ou encore les contraintes d'unicité. La classe Meta est optionnelle, 
+    mais elle est très utile pour personnaliser le comportement de votre modèle.
+
+    credentials sur blog :
+        username : neudjieu
+        password: Ubuntu1234
+
+
+En Django, les formulaires peuvent être créés de deux manières principales : en utilisant forms.Form pour des formulaires 
+personnalisés, ou en utilisant ModelForm pour des formulaires basés sur des modèles. Chaque approche a ses cas d'utilisation 
+spécifiques. Voici une explication détaillée des cas d'utilisation de chaque type de formulaire.
+
+Un ModelForm est un formulaire directement lié à un modèle Django. Il est utilisé pour créer ou mettre à jour des instances de modèle.
+
+Cas d'utilisation
+    a. Créer ou mettre à jour des instances de modèle
+    Si vous avez un modèle Django et que vous souhaitez créer un formulaire pour ajouter ou modifier des instances de ce modèle, ModelForm est la solution idéale.
+
+    Exemple : Un formulaire pour créer ou modifier un article dans un blog.
+
+    b. Simplifier la gestion des champs
+    ModelForm génère automatiquement les champs du formulaire en fonction des champs du modèle.
+
+    Vous n'avez pas besoin de définir manuellement chaque champ, sauf si vous souhaitez les personnaliser.
+
+    c. Validation automatique
+    ModelForm utilise les validations définies dans le modèle (comme max_length, null, blank, etc.).
+
+    Vous pouvez également ajouter des validations personnalisées dans le formulaire.
+
+    d. Sauvegarde automatique des données
+    ModelForm fournit une méthode save() qui permet de sauvegarder directement les données du formulaire dans la base de données.
+
+    e. Utilisation dans l'administration Django
+    L'interface d'administration de Django utilise ModelForm pour gérer les formulaires de création et de modification des objets.
+
+
+
+
+Un formulaire basé sur forms.Form est un formulaire personnalisé qui n'est pas directement lié à un modèle. Il est utilisé pour 
+    des cas plus généraux où vous avez besoin d'un contrôle total sur les champs et la logique du formulaire.
+
+Cas d'utilisation
+    a. Formulaires personnalisés
+    Si vous avez besoin d'un formulaire qui ne correspond pas directement à un modèle, utilisez forms.Form.
+
+    Exemple : Un formulaire de contact, un formulaire de recherche, ou un formulaire de connexion personnalisé.
+
+    b. Champs complexes ou personnalisés
+    Si vous avez besoin de champs qui ne sont pas directement liés à un modèle, ou si vous devez ajouter une logique personnalisée (comme des champs calculés ou des widgets spécifiques), forms.Form est plus adapté.
+
+    c. Validation personnalisée
+    Si vous avez besoin de valider les données d'une manière spécifique qui ne peut pas être gérée par les validations de modèle, utilisez forms.Form.
+
+    d. Formulaires multi-étapes
+    Pour les formulaires complexes qui nécessitent plusieurs étapes ou une logique de traitement spécifique, forms.Form est plus flexible.
+
+    e. Intégration avec des services externes
+    Si vous devez envoyer des données à un service externe (comme une API) plutôt que de les sauvegarder dans la base de données, forms.Form est plus approprié.
+
+
+    TAF : CREER LES FORMULAIRES AVEC forms.Form ?

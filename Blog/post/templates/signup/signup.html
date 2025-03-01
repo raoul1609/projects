@@ -1,0 +1,7 @@
+<h1> Fromulaire de creation de compte utilisateur </h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> Envoyer </button>
+</form>
+<p>Vous avez deja un compte? <a href="{% url 'login' %}"> connectez-vous!</a></p>
