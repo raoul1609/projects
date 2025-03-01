@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include
 
+from post.views import CustomLoginView
+
 def home(request):
     return HttpResponse ("Welcome home, enjoy the navigation")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', CustomLoginView.as_view(), name='login'),  # Utilise la vue personnalisée pour la connexion
     path('post/', include('post.urls')),
     path('', home)
 ]

@@ -20,7 +20,8 @@ from rest_framework import generics
 from .serializers import PostSerializer
 
 
-
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
 
 ### CLASSES POUR MON API ####
 
@@ -30,7 +31,11 @@ class PostList(generics.ListCreateAPIView):
     serializer_class = PostSerializer
 
 
-
+## PERSONNALISATION DE LA VUE CONNEXION
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'  # Utilise le template personnalisé, que j'ai cree
+    redirect_authenticated_user = True  # Redirige les utilisateurs déjà connectés
+    next_page = reverse_lazy('posts')  # Redirige vers la page d'accueil après la connexion
 
 
 

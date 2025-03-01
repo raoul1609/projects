@@ -81,7 +81,7 @@ DATABASES = {
         "NAME": "blog_db",
         "USER": "neudjieu",
         "PASSWORD": "Raoul1609",
-        "HOST": "0.0.0.0",
+        "HOST": "127.0.0.1",
         "PORT": "3306",
     }
 }
@@ -135,3 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 '''
 
 LOGIN_REDIRECT_URL = 'posts'  # Redirige vers la vue nommée 'getAllPosts'
+LOGIN_URL = 'login'

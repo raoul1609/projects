@@ -67,3 +67,7 @@ Cas d'utilisation
 
 
     TAF : CREER LES FORMULAIRES AVEC forms.Form ?
+
+
+par defaut django, utilise la account/login pour le connexion.
+lorque je cree un template personnalise de connexion , je dois configurer le projet pour qu'il utilise ce template la.
