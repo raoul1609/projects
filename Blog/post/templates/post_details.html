@@ -19,8 +19,15 @@
         {% empty %}
         <p> No comment yet.</p>
         {% endfor %}
-        
+ 
         <a href="{% url 'posts' %}"> Retour a la liste des posts</a>
-        <a href="{% url 'delete' thePost.id %}"> Supprimer le post </a>
+
+        {% if perms.post.delete_post %}
+            <a href="{% url 'delete' thePost.id %}"> Supprimer le post </a>
+        {% endif %}
+
+        {% if perms.post.change_post %}
+            <a href="{% url 'update' thePost.id %}"> Modifier le post </a>
+        {% endif %}
     </body>
 </html>

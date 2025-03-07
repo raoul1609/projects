@@ -4,7 +4,7 @@ from .models import Post, Comment
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 #from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
@@ -110,6 +110,7 @@ def addPost(request):
 
 
 @login_required
+@permission_required('post.change_post')
 def update_post(request, post_id):
     '''
         this view is used for update some post
@@ -130,7 +131,8 @@ def update_post(request, post_id):
             return render(request, 'update_post.html', {'message': 'ce post n existe pas encore'})
     
 
-@login_required    
+@login_required   
+@permission_required('post.delete_post') 
 def delete_post(request, post_id):
     '''
         this view is for delete post
