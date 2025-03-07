@@ -1,0 +1,15 @@
+TAF : 
+
+2. Gestion des créations (produits)
+    Catalogue des créations : Stocker les informations sur les créations de l'atelier (titre, description, prix, images, etc.).
+
+    Catégories : Organiser les créations par catégories (ex : robes, costumes, accessoires).
+
+    Disponibilité : Gérer la disponibilité des créations (en stock, épuisé, sur commande).
+
+3. Gestion des services
+    Liste des services : Proposer des services (ex : retouches, créations sur mesure, cours de couture).
+
+    Description des services : Détails, prix, durée, etc.
+
+    Rendez-vous : Permettre aux clients de prendre rendez-vous pour un service.
