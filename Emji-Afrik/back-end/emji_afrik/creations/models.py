@@ -22,11 +22,15 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
     
+
+def upload_to_path(instance, filename):
+    return f'images/{instance.titre}/{filename}'
+    
 ## modele Creations
 class Creations (models.Model):
     titre = models.CharField (max_length=100)
     description = models.TextField(null=False)
-    image = models.ImageField()
+    image = models.ImageField(upload_to=upload_to_path)
     prix = models.IntegerField()
     categorie = models.ForeignKey (Category, on_delete=models.SET_NULL, null=True, blank=True)
 

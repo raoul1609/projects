@@ -22,7 +22,7 @@ def home(request):
     return HttpResponse('Bienvenu chez Emji Afrik')
 
 urlpatterns = [
-    path('home/', home),
+    path('', home),
     path('admin/', admin.site.urls),
     path('services/', include('services.urls')),
     path('creations/', include('creations.urls')),  
