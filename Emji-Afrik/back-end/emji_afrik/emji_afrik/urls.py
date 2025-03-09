@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include, path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 def home(request):
     return HttpResponse('Bienvenu chez Emji Afrik')
 
@@ -27,3 +30,6 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('creations/', include('creations.urls')),  
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

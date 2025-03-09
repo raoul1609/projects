@@ -19,7 +19,7 @@ class CreationViewset(viewsets.ModelViewSet):
         # Validation supplémentaire : vérifier l'existance d'un serice avant sa creation
         request_data = request.data
 
-        check_existance_service_before_creating = [service for service in CreationViewset.queryset if service.name == request_data['name']]
+        check_existance_service_before_creating = [creation for creation in CreationViewset.queryset if creation.titre == request_data['titre']]
 
         if len (check_existance_service_before_creating)==0 :
             # Appeler la méthode create du parent pour continuer le traitement
